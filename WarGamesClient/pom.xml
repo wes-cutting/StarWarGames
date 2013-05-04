@@ -3,4 +3,57 @@
   <groupId>edu.neumont.csc380</groupId>
   <artifactId>WarGamesClient</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+		<camel.version>2.11.0</camel.version>
+		<activemq.version>5.8.0</activemq.version>
+		<spring.version>3.1.0.RELEASE</spring.version>
+	</properties>
+  
+  <dependencies>
+		<dependency>
+		  	<groupId>edu.neumont.csc380</groupId>
+		  	<artifactId>WarGamesAPI</artifactId>
+		  	<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	  	<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jms</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-camel</artifactId>
+			<version>${activemq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-pool</artifactId>
+			<version>${activemq.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.xbean</groupId>
+			<artifactId>xbean-spring</artifactId>
+			<version>3.12</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.6</version>
+		</dependency>
+  </dependencies>
 </project>
