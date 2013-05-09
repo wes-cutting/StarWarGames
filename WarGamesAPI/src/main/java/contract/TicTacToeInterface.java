@@ -18,7 +18,7 @@ public interface TicTacToeInterface {
 
 	public void moveRequest(MoveRequest mr);
 
-	public void newGameRequest(NewGameRequest ngr);
+	public NewGameResponse newGameRequest(NewGameRequest ngr);
 
 	public void endGame(EndGameResponse egr);
 

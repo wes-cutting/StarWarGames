@@ -14,7 +14,7 @@ public class NewGameResponse {
 	@XmlElement
 	private int gameId;
 	@XmlElement
-	private Board borad;
+	private Board board;
 
 	@XmlTransient
 	public int getGameId() {
@@ -25,12 +25,12 @@ public class NewGameResponse {
 		this.gameId = gameId;
 	}
 	@XmlTransient
-	public Board getBorad() {
-		return borad;
+	public Board getBoard() {
+		return board;
 	}
 
-	public void setBorad(Board borad) {
-		this.borad = borad;
+	public void setBoard(Board board) {
+		this.board = board;
 	}
 
 }

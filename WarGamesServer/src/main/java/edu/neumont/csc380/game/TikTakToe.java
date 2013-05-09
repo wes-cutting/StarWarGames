@@ -14,7 +14,7 @@ public class TikTakToe {
 	private BigInteger player1;
 	private BigInteger player2;
 	private BigInteger winner;
-	private Board board;	
+	private GameBoard board;	
 	private boolean gameOver = false;
 	private int id;
 	
@@ -23,7 +23,7 @@ public class TikTakToe {
 		id = idCounter;
 		idCounter++;
 		this.player1 = player1; 
-		board = new Board();
+		board = new GameBoard();
 	}
 	
 	public int getId(){
@@ -68,6 +68,10 @@ public class TikTakToe {
 	
 	private boolean isGameOver(){
 		return gameOver;
+	}
+	
+	public GameBoard getBoard(){
+		return board;
 	}
 
 }

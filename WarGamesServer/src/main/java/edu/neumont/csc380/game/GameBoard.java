@@ -1,15 +1,16 @@
 package edu.neumont.csc380.game;
 
-public class Board {
+import modelEnities.Board;
+
+public class GameBoard extends Board{
 
 	public char player1 = 'X';
 	public char player2 = 'O';
-	private char[][] board;
 	private char noWinner = 'N';
 	private char placeHolder = 'P';
 	private char winningChar = placeHolder;
 	
-	public Board(){
+	public GameBoard(){
 		board = new char[3][3];
 	}
 	

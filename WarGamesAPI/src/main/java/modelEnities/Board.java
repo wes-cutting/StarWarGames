@@ -1,7 +1,7 @@
 package modelEnities;
 
 public class Board {
-	char[][] board;
+	protected char[][] board;
 
 	public char[][] getBoard() {
 		return board;

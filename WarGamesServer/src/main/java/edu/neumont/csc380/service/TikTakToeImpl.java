@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import modelEnities.Board;
 import modelEnities.GameList;
 import modelRequests.GameListRequest;
 import modelRequests.JoinGameRequest;
@@ -45,8 +46,12 @@ public class TikTakToeImpl implements TicTacToeInterface {
 		
 	}
 
-	public void newGameRequest(NewGameRequest ngr) {
-		// TODO Auto-generated method stub
+	public NewGameResponse newGameRequest(NewGameRequest ngr) {
+		NewGameResponse response = new NewGameResponse();
+		TikTakToe game = new TikTakToe(ngr.getPublicKey());
+		response.setBoard(game.getBoard());
+		response.setGameId(game.getId());
+		return response;
 		
 	}
 
