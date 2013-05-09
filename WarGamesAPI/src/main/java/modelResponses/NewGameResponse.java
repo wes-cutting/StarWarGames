@@ -7,6 +7,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlSeeAlso;
 
+/**
+ * This response serves as a notification that the a game has been created
+ * @author cstephenson
+ *
+ */
 
 @XmlRootElement(name="NewGameResponse")
 @XmlSeeAlso(value={NewGameResponse.class})

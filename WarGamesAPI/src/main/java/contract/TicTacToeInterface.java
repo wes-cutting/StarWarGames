@@ -10,6 +10,14 @@ import modelResponses.GameListResponse;
 import modelResponses.MoveResponse;
 import modelResponses.NewGameResponse;
 
+/**
+ * This interface is the contract between the server and client
+ * The interface contains each request and response used by the client and server
+ * @author cstephenson
+ *
+ */
+
+
 public interface TicTacToeInterface {
 
 	public GameList getGameList(GameListRequest glr);

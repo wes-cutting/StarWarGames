@@ -8,6 +8,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlTransient;
 
+/**
+ * This class is the end game request sent by the client to determine if the game has ended
+ * @author cstephenson
+ *
+ */
 
 @XmlRootElement(name = "EndGameRequest")
 @XmlSeeAlso(value={EndGameRequest.class})

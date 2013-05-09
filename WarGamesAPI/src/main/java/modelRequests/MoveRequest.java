@@ -9,6 +9,13 @@ import javax.xml.bind.annotation.XmlSeeAlso;
 
 import contract.Signable;
 
+
+
+/**
+ * This class represents the MoveRequest sent by the client to make a move on the board.
+ * @author cstephenson
+ *
+ */
 @XmlRootElement(name="MoveRequest")
 @XmlSeeAlso(value={MoveRequest.class})
 public class MoveRequest implements Signable {

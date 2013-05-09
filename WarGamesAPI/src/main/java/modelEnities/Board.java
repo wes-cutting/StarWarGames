@@ -1,5 +1,14 @@
 package modelEnities;
 
+
+
+/**
+ * This class is the Board entity used to represent the board in move 
+ * requests and move responses.
+ * @author cstephenson
+ *
+ */
+
 public class Board {
 	protected char[][] board;
 

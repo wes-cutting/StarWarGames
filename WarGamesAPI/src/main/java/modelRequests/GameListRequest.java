@@ -7,6 +7,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlSeeAlso;
 import javax.xml.bind.annotation.XmlTransient;
 
+
+/**
+ * This calls is used to request a list of games
+ * @author cstephenson
+ *
+ */
+
 @XmlRootElement(name = "GameListRequest")
 @XmlSeeAlso(value={GameListRequest.class})
 public class GameListRequest {

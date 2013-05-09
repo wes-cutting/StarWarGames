@@ -8,6 +8,14 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlSeeAlso;
 
+
+/**
+ * The server sends this response to the listening clients to indicate the end of the game
+ * @author cstephenson
+ *
+ */
+
+
 @XmlRootElement(name="EndGameResponse")
 @XmlSeeAlso(value={EndGameResponse.class})
 public class EndGameResponse {

@@ -7,6 +7,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlSeeAlso;
 
+/**
+ * The client can send this request to join an already existing game
+ * @author cstephenson
+ *
+ */
+
+
 @XmlRootElement(name="JoinGameRequest")
 @XmlSeeAlso(value= {JoinGameRequest.class})
 public class JoinGameRequest {

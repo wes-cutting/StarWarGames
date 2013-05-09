@@ -7,7 +7,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlSeeAlso;
 
-
+/**
+ * This class is the response sent by the server to indicate to the client
+ * that it is their turn. The response contains the most current board
+ * @author cstephenson
+ *
+ */
 
 @XmlRootElement(name="MoveResponse")
 @XmlSeeAlso(value={MoveResponse.class})

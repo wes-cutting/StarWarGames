@@ -8,6 +8,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlSeeAlso;
 
+
+/**
+ * This response returns the list of games currently available
+ * @author cstephenson
+ *
+ */
+
 @XmlRootElement(name="GameListResponse")
 @XmlSeeAlso(value={GameListResponse.class})
 public class GameListResponse {

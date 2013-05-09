@@ -3,6 +3,13 @@ package modelEnities;
 import java.math.BigInteger;
 import java.util.List;
 
+
+/**
+ * This class is an abstraction for the list of games
+ * @author wcutting
+ *
+ */
+
 public class GameList {
 	private List<Integer> games;
 	
