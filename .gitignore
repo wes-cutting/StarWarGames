@@ -162,3 +162,8 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+WarGamesAPI/target/classes/META-INF/MANIFEST.MF
+WarGamesAPI/target/classes/META-INF/maven/edu.neumont.csc380/WarGamesAPI/pom.properties
+WarGamesClient/target/classes/META-INF/MANIFEST.MF
+WarGamesClient/target/classes/META-INF/maven/edu.neumont.csc380/WarGamesClient/pom.properties
+WarGamesServer/target/m2e-wtp/web-resources/META-INF/maven/edu.neumont.csc380/WarGamesServer/pom.properties
