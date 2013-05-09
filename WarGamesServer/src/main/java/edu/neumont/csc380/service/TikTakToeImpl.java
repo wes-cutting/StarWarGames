@@ -55,4 +55,14 @@ public class TikTakToeImpl implements TicTacToeInterface {
 		
 	}
 
+	public void getSignature() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setSignature() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
