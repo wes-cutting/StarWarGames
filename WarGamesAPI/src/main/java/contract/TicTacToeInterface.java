@@ -27,4 +27,7 @@ public interface TicTacToeInterface {
 
 	public void newGameResponse(NewGameResponse ngr);
 
+	public void getSignature();
+	
+	public void setSignature();
 }

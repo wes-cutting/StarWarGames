@@ -1,20 +1,24 @@
 package modelRequests;
 
+import java.math.BigInteger;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlTransient;
 
-@XmlRootElement(name = "gameListRequest")
+@XmlRootElement(name = "GameListRequest")
+@XmlSeeAlso(value={GameListRequest.class})
 public class GameListRequest {
 	@XmlElement
-	public String publicKey;
-
-	public String getPublicKey() {
+	public BigInteger publicKey;
+	
+	@XmlTransient
+	public BigInteger getPublicKey() {
 		return publicKey;
 	}
 
-	public void setPublicKey(String publicKey) {
+	public void setPublicKey(BigInteger publicKey) {
 		this.publicKey = publicKey;
 	}
 }
