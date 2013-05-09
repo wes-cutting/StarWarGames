@@ -1,13 +1,16 @@
 package edu.neumont.csc380;
 
 import java.io.IOException;
+import java.io.StringReader;
 import java.math.BigInteger;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.validation.SchemaFactory;
 
 import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 /**
  * A static class that helps Encrypting and Signing data.
@@ -77,15 +80,20 @@ public class Encrypton {
 		return decoded;
 	}
 	/**
-	 * Verifies if the XML is 
+	 * Verifies if the XML is valid
 	 * @param m
 	 * @return
 	 */
-	public static boolean isVerified(String m) {
+	public static boolean VerifyXML(String m) {
 		DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+		factory.setValidating(false);
+		factory.setNamespaceAware(true);
+		SchemaFactory schema = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");	
+		
 		try {
+			factory.setSchema(schema.newSchema());
 			DocumentBuilder builder = factory.newDocumentBuilder();
-			Document doc = builder.parse(m);
+			Document doc = builder.parse(new InputSource(new StringReader(m)));
 		} catch (ParserConfigurationException e1) {
 			return false;
 		} catch (SAXException e1) {
