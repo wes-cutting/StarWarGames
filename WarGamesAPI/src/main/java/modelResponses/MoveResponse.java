@@ -16,6 +16,8 @@ public class MoveResponse {
 	private int gameId;
 	@XmlElement
 	private Board board;
+	@XmlElement
+	private boolean isGameOver;
 
 	@XmlTransient
 	public int getGameId() {
@@ -32,6 +34,15 @@ public class MoveResponse {
 
 	public void setBoard(Board board) {
 		this.board = board;
+	}
+	
+	@XmlTransient
+	public boolean getIsGameOver(){
+		return isGameOver;
+	}
+	
+	public void setIsGameOver(boolean gameOver){
+		isGameOver = gameOver;
 	}
 
 }

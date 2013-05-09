@@ -19,6 +19,7 @@ import modelResponses.NewGameResponse;
 import contract.TicTacToeInterface;
 
 import edu.neumont.csc380.game.TikTakToe;
+import exceptions.InvalidOperation;
 
 @Service("TiKTakToeService")
 public class TikTakToeImpl implements TicTacToeInterface {
@@ -35,15 +36,29 @@ public class TikTakToeImpl implements TicTacToeInterface {
 		games.setGames(gameIds);
 		return games;
 	}
-
-	public void joinGame(JoinGameRequest jgr) {
-		// TODO Auto-generated method stub
-		
+ 
+	public MoveResponse joinGame(JoinGameRequest jgr) throws InvalidOperation{
+		List<TikTakToe> games = TikTakToe.GetGameList();
+		TikTakToe game = null;
+		for(TikTakToe g : games){
+			if(g.getId() == jgr.getGameId()){
+				g.join(jgr.publicKey);
+				game = g;
+				break;
+			}
+		}
+		if(game == null){
+			throw new InvalidOperation("Game does not exist with ID in Join Request");
+		}
+		MoveResponse response = new MoveResponse();
+		response.setGameId(game.getId());
+		response.setBoard(game.getBoard());
+		return response;
 	}
 
-	public void moveRequest(MoveRequest mr) {
-		// TODO Auto-generated method stub
+	public MoveResponse moveRequest(MoveRequest mr) throws InvalidOperation {
 		
+		return null;		
 	}
 
 	public NewGameResponse newGameRequest(NewGameRequest ngr) {

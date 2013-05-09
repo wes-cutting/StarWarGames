@@ -14,9 +14,9 @@ public interface TicTacToeInterface {
 
 	public GameList getGameList(GameListRequest glr);
 
-	public void joinGame(JoinGameRequest jgr);
+	public MoveResponse joinGame(JoinGameRequest jgr);
 
-	public void moveRequest(MoveRequest mr);
+	public MoveResponse moveRequest(MoveRequest mr);
 
 	public NewGameResponse newGameRequest(NewGameRequest ngr);
 
