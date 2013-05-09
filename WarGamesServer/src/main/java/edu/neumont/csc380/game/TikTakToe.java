@@ -4,6 +4,11 @@ import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The chief game class that handles input, players and the gameboard
+ * @author wcutting
+ *
+ */
 public class TikTakToe {
 	private static List<TikTakToe> GameList = new ArrayList<TikTakToe>();
 	private static int idCounter = 1;
