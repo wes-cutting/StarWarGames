@@ -1,5 +1,9 @@
 package edu.neumont.csc380.service;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import modelEnities.GameList;
@@ -13,11 +17,22 @@ import modelResponses.MoveResponse;
 import modelResponses.NewGameResponse;
 import contract.TicTacToeInterface;
 
+import edu.neumont.csc380.game.TikTakToe;
+
 @Service("TiKTakToeService")
 public class TikTakToeImpl implements TicTacToeInterface {
 
 	public GameList getGameList(GameListRequest glr) {
-		return null;		
+		List<Integer> gameIds = new ArrayList<Integer>();
+		List<TikTakToe> tikTakGames = TikTakToe.GetGameList();
+		
+		for(TikTakToe ttt : tikTakGames){
+			gameIds.add(ttt.getId());
+		}
+		
+		GameList games = new GameList();
+		games.setGames(gameIds);
+		return games;
 	}
 
 	public void joinGame(JoinGameRequest jgr) {

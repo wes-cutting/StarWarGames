@@ -4,13 +4,13 @@ import java.math.BigInteger;
 import java.util.List;
 
 public class GameList {
-	private List<BigInteger> games;
+	private List<Integer> games;
 	
-	public void setGames(List<BigInteger> listOfGameIds){
+	public void setGames(List<Integer> listOfGameIds){
 		games = listOfGameIds;
 	}
 	
-	public List<BigInteger> getGames(){
+	public List<Integer> getGames(){
 		return games;
 	}
 }

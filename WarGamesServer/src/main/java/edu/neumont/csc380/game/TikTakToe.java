@@ -6,6 +6,7 @@ import java.util.List;
 
 public class TikTakToe {
 	private static List<TikTakToe> GameList = new ArrayList<TikTakToe>();
+	private static int idCounter = 1;
 	
 	public static List<TikTakToe> GetGameList(){
 		return GameList;
@@ -15,11 +16,18 @@ public class TikTakToe {
 	private BigInteger winner;
 	private Board board;	
 	private boolean gameOver = false;
+	private int id;
 	
 	public TikTakToe(BigInteger player1){
 		GameList.add(this);
+		id = idCounter;
+		idCounter++;
 		this.player1 = player1; 
 		board = new Board();
+	}
+	
+	public int getId(){
+		return id;
 	}
 	
 	public void join(BigInteger player2){
