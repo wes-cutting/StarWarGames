@@ -5,6 +5,7 @@ import java.math.BigInteger;
 import java.util.List;
 import java.util.Scanner;
 
+import modelRequests.EndGameRequest;
 import modelRequests.GameListRequest;
 import modelRequests.MoveRequest;
 import modelRequests.NewGameRequest;
@@ -117,10 +118,13 @@ public class Client extends AbstractJUnit4SpringContextTests {
 	 * Request to check for the end game
 	 * @return
 	 */
-//	public BigInteger hasGameEnded(){
-//		//Need an end game request
-//		EndGameResponse response = camelTemplate.requestBody("jms:queue:game", EndGameResponse.class);
-//	}
+	public BigInteger hasGameEnded(BigInteger publicKey){
+		//Need an end game request
+		EndGameRequest request = new EndGameRequest();
+		request.setPublicKey(publicKey);
+		request.setSignature();
+		EndGameResponse response = camelTemplate.requestBody("jms:queue:game", EndGameResponse.class);
+	}
 //
 //	/**
 //	 * Retrieves the public and private keys from Key Generation Service
