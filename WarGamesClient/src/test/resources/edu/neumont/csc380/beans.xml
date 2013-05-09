@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jaxws="http://cxf.apache.org/jaxws"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:camel="http://camel.apache.org/schema/spring"
+	xsi:schemaLocation="
+       http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+       http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd
+       http://www.springframework.org/schema/context 
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://camel.apache.org/schema/spring 
+         http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+	<import resource="classpath:META-INF/cxf/cxf.xml" />
+	<import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
+
+	<context:component-scan base-package="edu.neumont.csc380" />
+
+	<!-- Camel configuration -->
+	<camel:camelContext id="camel-client">
+		<!-- This tells Camel that it should use JAXB as its serialization strategy -->
+  		<camel:dataFormats>
+  			<camel:jaxb contextPath="edu.neumont.csc380.hello"/>
+  		</camel:dataFormats>
+	</camel:camelContext>
+	
+	<!--  Espionage Service -->
+	<jaxws:client id="jaxwsClient"
+		serviceClass="edu.neumont.csc380.service.EspionageService"
+		address="http://localhost:8080/Espionage_Server/services/espionage">
+		<jaxws:outInterceptors>
+			<bean class="org.apache.cxf.ws.security.wss4j.WSS4JOutInterceptor">
+				<constructor-arg>
+					<map>
+						<entry key="action" value="UsernameToken" />
+						<entry key="passwordType" value="PasswordText" />
+						<entry key="passwordCallbackRef">
+							<ref bean="callbackRef" />
+						</entry>
+						<entry key="user" value="joel" />
+					</map>
+				</constructor-arg>
+			</bean>
+		</jaxws:outInterceptors>
+	</jaxws:client>
+	<bean id="callbackRef" class="edu.neumont.csc380.PasswordCallbackHandler"></bean>
+	
+</beans>
