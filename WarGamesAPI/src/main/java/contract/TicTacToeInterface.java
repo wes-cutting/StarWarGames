@@ -1,5 +1,6 @@
 package contract;
 
+import modelEnities.GameList;
 import modelRequests.GameListRequest;
 import modelRequests.JoinGameRequest;
 import modelRequests.MoveRequest;
@@ -11,7 +12,7 @@ import modelResponses.NewGameResponse;
 
 public interface TicTacToeInterface {
 
-	public void getGameList(GameListRequest glr);
+	public GameList getGameList(GameListRequest glr);
 
 	public void joinGame(JoinGameRequest jgr);
 

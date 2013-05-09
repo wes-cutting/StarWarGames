@@ -2,6 +2,7 @@ package edu.neumont.csc380.service;
 
 import org.springframework.stereotype.Service;
 
+import modelEnities.GameList;
 import modelRequests.GameListRequest;
 import modelRequests.JoinGameRequest;
 import modelRequests.MoveRequest;
@@ -15,9 +16,8 @@ import contract.TicTacToeInterface;
 @Service("TiKTakToeService")
 public class TikTakToeImpl implements TicTacToeInterface {
 
-	public void getGameList(GameListRequest glr) {
-		// TODO Auto-generated method stub
-		
+	public GameList getGameList(GameListRequest glr) {
+		return null;		
 	}
 
 	public void joinGame(JoinGameRequest jgr) {
